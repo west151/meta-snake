@@ -1,0 +1,18 @@
+# POKY_BBLAYERS_CONF_VERSION is increased each time build/conf/bblayers.conf
+# changes incompatibly
+POKY_BBLAYERS_CONF_VERSION = "2"
+
+BBPATH = "${TOPDIR}"
+BBFILES ?= ""
+
+BBLAYERS ?= " \
+   ${HOME}/yocto-data/poky/meta \
+   ${HOME}/yocto-data/poky/meta-poky \
+   ${HOME}/yocto-data/poky/meta-yocto-bsp \
+   ${HOME}/yocto-data/poky/meta-openembedded/meta-oe \
+   ${HOME}/yocto-data/poky/meta-openembedded/meta-networking \
+   ${HOME}/yocto-data/poky/meta-openembedded/meta-python \
+   ${HOME}/yocto-data/poky/meta-odroid \
+   ${HOME}/yocto-data/poky/meta-qt5 \
+   ${HOME}/yocto-data/poky/meta-snake-xu4 \
+  "

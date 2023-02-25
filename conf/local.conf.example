@@ -1,0 +1,88 @@
+# Local configuration for meta-snake images This is a sysvinit system
+
+LICENSE_FLAGS_WHITELIST = "commercial"
+
+DISTRO_FEATURES += "ipv4 ipv6 ext2 pam opengl usbhost ${DISTRO_FEATURES_LIBC}"
+
+PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
+PREFERRED_PROVIDER_jpeg-native = "libjpeg-turbo-native"
+
+PREFERRED_PROVIDER_udev = "eudev"
+
+#sysvinit
+VIRTUAL-RUNTIME_init_manager = "sysvinit"
+
+MACHINE_FEATURES_remove = "apm"
+
+IMAGE_FSTYPES ?= "rpi-sdimg"
+
+# kernel
+PREFERRED_VERSION_linux-raspberrypi = "4.19.%"
+
+# Choose the board you are building for
+MACHINE ?= "raspberrypi-cm3"
+
+# u-boot
+#RPI_USE_U_BOOT = "1"
+# UART
+ENABLE_UART = "1"
+
+# passed to make so setting it to “-j X”
+PARALLEL_MAKE ?= "-j 2"
+# BitBake threads used to run tasks such as do_fetch, do_configure, do_compile etc
+BB_NUMBER_THREADS ?= "4"
+
+INHERIT += "extrausers"
+EXTRA_USERS_PARAMS = "usermod -P snake root;"
+hostname_pn-base-files = "snake"
+
+DL_DIR ?= "${TOPDIR}/downloads"
+SSTATE_DIR ?= "${TOPDIR}/sstate-cache"
+TMPDIR = "${TOPDIR}/tmp"
+
+# i2c
+ENABLE_I2C = "1"
+# SPLASH
+DISABLE_SPLASH = "1"
+# WAVESHARE DISPLAY
+WAVESHARE_1024X600_C_2_1 = "1"
+#
+#ENABLE_KGDB = "1"
+#
+DISABLE_RPI_BOOT_LOGO = "1"
+
+#KERNEL_DEVICETREE_remove = "bcm2708-rpi-0-w.dtb"
+
+#
+# Disk Space Monitoring during the build
+#
+# Monitor the disk space during the build. If there is less that 1GB of space or less
+# than 100K inodes in any key build location (TMPDIR, DL_DIR, SSTATE_DIR), gracefully
+# shutdown the build. If there is less that 100MB or 1K inodes, perform a hard abort
+# of the build. The reason for this is that running completely out of space can corrupt
+# files and damages the build in ways which may not be easily recoverable.
+
+BB_DISKMON_DIRS = "\
+    STOPTASKS,${TMPDIR},1G,100K \
+    STOPTASKS,${DL_DIR},1G,100K \
+    STOPTASKS,${SSTATE_DIR},1G,100K \
+    ABORT,${TMPDIR},100M,1K \
+    ABORT,${DL_DIR},100M,1K \
+    ABORT,${SSTATE_DIR},100M,1K" 
+
+DISTRO = "poky"
+
+PACKAGE_CLASSES = "package_ipk"
+
+# i686 or x86_64
+SDKMACHINE = "x86_64"
+
+USER_CLASSES = "image-mklibs image-prelink"
+
+PATCHRESOLVE = "noop"
+
+RM_OLD_IMAGE = "1"
+
+CONF_VERSION = "1"
+
+INHERIT += "rm_work"

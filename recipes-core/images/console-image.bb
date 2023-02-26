@@ -201,7 +201,6 @@ IMAGE_INSTALL += " \
     ${MQTT_DEV} \
     ${QT6_PKGS} \
     ${MODULES_FILES} \
-    ${QSWEEP_SYSTEM} \
 "
 
 disable_bootlogd() {

@@ -18,5 +18,5 @@ BBLAYERS ?= " \
     ${HOME}/yocto-data/poky/meta-virtualization \
     ${HOME}/yocto-data/poky/meta-security \
     ${HOME}/yocto-data/poky/meta-qt6 \    
-    ${HOME}/yocto-data/poky/meta-snake-cm4-qt6 \
+    ${HOME}/yocto-data/poky/meta-snake \
 "

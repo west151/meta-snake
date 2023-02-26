@@ -1,8 +1,0 @@
-[Unit]
-Description=GNU qsweep-server startup script
-
-[Service]
-ExecStart=/usr/bin/qsweep-server
-
-[Install]
-WantedBy=multi-user.target

@@ -15,7 +15,6 @@ BBLAYERS ?= " \
     ${HOME}/yocto-data/poky/meta-openembedded/meta-perl \
     ${HOME}/yocto-data/poky/meta-openembedded/meta-filesystems \
     ${HOME}/yocto-data/poky/meta-raspberrypi \
-    ${HOME}/yocto-data/poky/meta-virtualization \
     ${HOME}/yocto-data/poky/meta-security \
     ${HOME}/yocto-data/poky/meta-snake \
 "

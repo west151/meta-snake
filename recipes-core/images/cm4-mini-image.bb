@@ -9,7 +9,6 @@ IMAGE_LINGUAS = "en-us ru-ru"
 
 MODULES_FILES = " \
     modules-files \
-    script-files \
 "
 
 CORE_OS = " \

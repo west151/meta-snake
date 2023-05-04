@@ -168,7 +168,6 @@ QT6_PKGS = " \
     qtquick3d \
     qtquicktimeline \
     qtsensors \
-    qtmultimedia \
     qtremoteobjects \
     qtpositioning \
     qtscxml \
@@ -176,12 +175,15 @@ QT6_PKGS = " \
     qtdatavis3d \
     qtopcua \
     qtconnectivity \
-    qtinterfaceframework \
-    qtapplicationmanager \
     qtdeviceutilities \
     qtlanguageserver \
     qthttpserver \
 "
+
+# 6.5 x11 dependency
+# qtmultimedia
+# qtinterfaceframework
+# qtapplicationmanager 
 
 IMAGE_INSTALL += " \
     kernel-modules \

@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://${S}/COPYING;md5=751419260aa954499f7abaabaa882bbe"
 DEPENDS = "libusb1"
 
 SRC_URI = "https://gitea.osmocom.org/sdr/rtl-sdr/archive/${PV}.tar.gz"
-SRC_URI[sha256sum] = "453b1be3b7a423a18dc5c8f9d4cb3b2d1c61c8734ebd7fe055caabe0c6451d1d"
+SRC_URI[sha256sum] = "3ec9675cd1a61b60adbaf286ce796adf16d569f2fcc8db1113801a123a38480f"
 
 S = "${WORKDIR}/rtl-sdr"
 

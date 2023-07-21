@@ -17,7 +17,7 @@ DEFAULT_TIMEZONE = "Europe/Moscow"
 # psplash
 #IMAGE_INSTALL:append = " psplash"
 # kernel:
-PREFERRED_VERSION_linux-raspberrypi = "5.15.%"
+PREFERRED_VERSION_linux-raspberrypi = "6.1.%"
 # This sets machine:
 MACHINE ??= "raspberrypi4-64"
 # disable splash
